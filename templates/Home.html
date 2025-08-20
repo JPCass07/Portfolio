@@ -2,26 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julio Paulo Cassinda | Portfolio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
 </head>
-<body class="container py-5">
+<body>
+  <script>
+function openModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
 
-  <header class="mb-5">
-    <h1 class="display-4">Hi, I’m Julio</h1>
-    <p class="lead">Aspiring Computer Scientist |Python Dev </p>
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+// Close when clicking outside modal
+window.onclick = function(event) {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+</script>
+
+   <!-- cubes-->
+     <div class="cube-container">
+ <!-- 15 cubes -->
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+</div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Julio<span>C.</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+  <canvas id="bg"></canvas>
 
-  <main>
+  <!-- Hero Section -->
+  <section class="hero">
+ 
+
+<!-- hero main-->
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Julio Paulo Cassinda</span></h1>
+      <p>A Computer Science Student passionate about cybersecurity, development, and problem solving.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Welcome to my portfolio website! Here you'll find information about my projects, skills, and interests.</p>
+    <p>
+      I'm a Computer Science student with a strong interest in programming, software design, 
+      and cybersecurity. I enjoy building projects that are clean, functional, and impactful. 
+      My goal is to grow as a developer and contribute to innovative tech solutions.
+    </p>
+  </section>
 
-    <a href="/project" class="btn btn-primary mt-3">See my projects</a>
-  </main>
+  <!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card" onclick="openModal('project1')">
+      <h3>Portfolio Website</h3>
+      <p>Personal responsive portfolio to showcase skills and projects.</p>
+    </div>
 
-  <footer class="mt-5">
-    <p class="text-muted">© 2025 Julio Paulo Cassinda</p>
+    <div class="project-card" onclick="openModal('project2')">
+      <h3>Resource management software</h3>
+      <p>A resource manager with basic linear extrapolation to predict resource shortages</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('project3')">
+      <h3>AI species identifier</h3>
+      <p>An AI built with Python and binary trees to identify penguin species from given data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Project 1 -->
+<div id="project1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project1')">&times;</span>
+    <h2>Portfolio Website</h2>
+    <p>
+      This is a responsive personal portfolio website built with Flask, HTML, CSS,  and JavaScript.
+      It features a sleek dark theme with animations and project showcase sections. This is the web app you are currently on!
+      i will continue to develop and add additonal projects to this web app as I progess, enentually adding work experiences too!
+    </p>
+  </div>
+</div>
+
+<!-- Modal for Project 2 -->
+<div id="project2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project2')">&times;</span>
+    <h2>Resource Management Software</h2>
+    <p>
+      A software tool designed to track resources and predict shortages using simple linear
+      extrapolation. Built with Python and integrated data visualization libraries. This was my A level computer science project.
+      It gave me insights into the fundementals of database management, using MySQL to manipultate data on a server and distribute it to client machines
+      as well as visualisation and graphical design basics.
+    </p>
+  </div>
+</div>
+
+<!-- Modal for Project 3 -->
+<div id="project3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project3')">&times;</span>
+    <h2>AI Species Identifier</h2>
+    <p>
+      A machine learning project that identifies penguin species from biological data
+      (bill length, depth, color, height, weight, etc.). Implemented in Python using binary
+      trees and scientific libraries. This was coded during a hackathon I attended at Tesside University alongside 2 other students.
+      This gave me insights into AI development, decicion trees and data cleaning.
+    </p>
+  </div>
+</div>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul class="skill-list">
+      <li>Python</li>
+      <li>SQL</li>
+      <li>JavaScript</li>
+      <li>Git and github</li>
+      <li>C#</li>
+      <li>HTML & CSS</li>
+      <li>Cybersecurity Fundamentals</li>
+      <li>Database Management</li>
+      <li>full stack development</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:JPCass07@outlook.com">JPCass07@outlook.com</a></p>
+    <p>LinkedIn: <a href="#">https://www.linkedin.com/in/julio-cassinda-828512321/</a></p>
+    <p>GitHub: <a href="#">https://github.com/JPCass07</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Julio Paulo Cassinda | </p>
   </footer>
+
+
 
 </body>
 </html>

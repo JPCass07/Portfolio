@@ -404,6 +404,7 @@ footer {
   gap: 10px;
   margin: 20px 0;
   flex-wrap: nowrap; /* prevent any wrapping */
+  color: #011f51;
   z-index: 300;
 }
 

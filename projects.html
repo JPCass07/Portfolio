@@ -199,6 +199,11 @@
     <p>LinkedIn: <a href="#">https://www.linkedin.com/in/julio-cassinda-828512321/</a></p>
     <p>GitHub: <a href="#">https://github.com/JPCass07</a></p>
   </section>
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 
   
   <footer>
@@ -274,6 +279,32 @@
   });
 
   updateProjectDates();
+
+  // Image Modal functionality
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = modal.querySelector(".close");
+
+// Open modal when image clicked
+document.querySelectorAll(".project-images img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  });
+});
+
+// Close modal when 'X' clicked
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal when clicking outside image
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
 </script>
 
 </body>

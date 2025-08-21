@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: #0b0b15;
@@ -86,10 +89,10 @@ body {
 }
 
 .hero-content {
-  position: relative;
+  position: relaive;
   z-index: 1;
   color: white;
-  max-width: 800px;
+  max-width: none;
   padding: 0 1rem;
 }
 
@@ -112,6 +115,7 @@ body {
   color: #fff;
   font-weight: bold;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center;
 }
 .hero-content .btn:hover {
   opacity: 0.8;
@@ -121,6 +125,7 @@ body {
 /* Sections */
 section {
   padding: 5rem 10%;
+  z-index: 0;
 }
 section h2 {
   text-align: center;
@@ -230,6 +235,7 @@ footer {
 }
 .close:hover {
   color: #fc0000;
+  transform: scale(1.2);
 }
 
 @keyframes fadeIn {
@@ -287,5 +293,94 @@ footer {
     transform: translate(0,0) rotateX(360deg) rotateY(360deg) scale(1);
     opacity: 0.4;
   }
+}
+
+/* new page same sheet*//* Container & filter */
+/* General Button */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #0b052b, #00311990);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Dropdown Styling */
+.project-dropdown {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  z-index: 300;
+}
+
+.project-header {
+  background: linear-gradient(45deg, #a45bff, #4ec3ff);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.project-header:hover {
+  background: linear-gradient(45deg, #8741cc, #3490cc);
+}
+
+.project-dates {
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.project-content {
+  
+  display: none; /* hidden initially */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #170146;
+  padding: 1rem;
+  color: #fff;
+}
+
+.images-container {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.images-container img {
+  max-width: 150px;
+  border-radius: 6px;
+}
+
+/* Filter section */
+.filter-section {
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 300;
+}
+
+.filter-section select {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 

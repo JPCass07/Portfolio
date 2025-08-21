@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julio Paulo Cassinda | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <!-- cubes-->
+  <div class="cube-container">
+  <!-- 15 cubes -->
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+</div>
+
+ <!-- Filter -->
+        <div class="filter-section">
+          <div class="logo">Julio<span>C.</span></div>
+          <label for="filter">Sort by:</label>
+          <select id="filter">
+            <option value="alpha">Alphabetical</option>
+            <option value="start">Start Date</option>
+            <option value="recent">Recent / Active First</option>
+          </select>
+
+                <ul class="nav-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#about">more info</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+        </div>
+
+        
+  <!-- Projects -->
+   <style>
+  #projects-container {
+    z-index: 300;
+    position: relative; /* z-index only works on positioned elements */
+  }
+</style>
+  <div id="projects-container">
+    
+    <div class="project-dropdown" 
+         data-start="2025-01-10" 
+         data-end="" 
+         data-name="AI Species Identifier" 
+         data-active="false">
+      <div class="project-header">
+        <span class="project-title">AI Species Identifier</span>
+        <span class="project-dates"></span>
+      </div>
+      <div class="project-content">
+        <p>A machine learning project that identifies penguin species...</p>
+        <div class="project-images">
+          <img src="image1.jpg" alt="AI Species Example">
+          <img src="image2.jpg" alt="Data Visualization">
+        </div>
+        <a href="https://github.com/username/ai-species" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-dropdown" 
+         data-start="2024-05-20" 
+         data-end="2024-08-15" 
+         data-name="Web Portfolio" 
+         data-active="false">
+      <div class="project-header">
+        <span class="project-title">Web Portfolio</span>
+        <span class="project-dates"></span>
+      </div>
+      <div class="project-content">
+        <p>A portfolio website showing projects and skills...</p>
+        <div class="project-images">
+          <img src="portfolio1.jpg" alt="Portfolio Homepage">
+        </div>
+        <a href="https://github.com/username/web-portfolio" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+<section id="about" class="about">
+    <h2>Why these projects?</h2>
+    <p>
+   I have made these projects to highlight a blend of creativity, technical skill, and problem-solving. Each one tells a story of challenges I faced, solutions crafted, and lessons learned. Feel free to explore the details above and reach out if you'd like to collaborate or learn more.</p>
+
+
+  <p> click Home to return to the Homepage</p>
+    </p>
+
+    
+  </section>
+<!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:JPCass07@outlook.com">JPCass07@outlook.com</a></p>
+    <p>LinkedIn: <a href="#">https://www.linkedin.com/in/julio-cassinda-828512321/</a></p>
+    <p>GitHub: <a href="#">https://github.com/JPCass07</a></p>
+  </section>
+
+  
+  <footer>
+    <p>Julio Paulo Cassinda | </p>
+  </footer>
+
+  <script>
+  const projectsContainer = document.getElementById('projects-container');
+  const filterSelect = document.getElementById('filter');
+  const today = new Date();
+
+  // Set dates and handle blank end
+  function updateProjectDates() {
+    document.querySelectorAll('.project-dropdown').forEach(project => {
+      const start = project.dataset.start;
+      const end = project.dataset.end;
+      const active = project.dataset.active === 'true';
+      const datesSpan = project.querySelector('.project-dates');
+
+      if (!end && !active) {
+        // One-day event
+        datesSpan.textContent = `${start} (One-day event)`;
+      } else if (!end && active) {
+        // Ongoing project
+        datesSpan.textContent = `${start} - current`;
+      } else {
+        // Normal date range
+        datesSpan.textContent = `${start} - ${end}`;
+      }
+    });
+  }
+
+  // Toggle dropdown content
+  projectsContainer.addEventListener('click', e => {
+    if (e.target.closest('.project-header')) {
+      const dropdown = e.target.closest('.project-dropdown');
+      const content = dropdown.querySelector('.project-content');
+
+      if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        content.style.maxHeight = null;
+        setTimeout(() => content.style.display = 'none', 300);
+      } else {
+        content.style.display = 'block';
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    }
+  });
+
+  // Filter sorting
+  filterSelect.addEventListener('change', () => {
+    const projects = Array.from(document.querySelectorAll('.project-dropdown'));
+    const value = filterSelect.value;
+
+    projects.sort((a, b) => {
+      const nameA = a.dataset.name.toLowerCase();
+      const nameB = b.dataset.name.toLowerCase();
+      const startA = new Date(a.dataset.start);
+      const startB = new Date(b.dataset.start);
+      const endA = a.dataset.end ? new Date(a.dataset.end) : today;
+      const endB = b.dataset.end ? new Date(b.dataset.end) : today;
+      const activeA = a.dataset.active === 'true' ? 1 : 0;
+      const activeB = b.dataset.active === 'true' ? 1 : 0;
+
+      if (value === 'alpha') return nameA.localeCompare(nameB);
+      if (value === 'start') return startA - startB;
+      if (value === 'recent') {
+        if (activeA !== activeB) return activeB - activeA;
+        return endB - endA;
+      }
+    });
+
+    projects.forEach(project => projectsContainer.appendChild(project));
+  });
+
+  updateProjectDates();
+</script>
+
+</body>
+</html>
+

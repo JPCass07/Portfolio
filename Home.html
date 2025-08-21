@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julio Paulo Cassinda | Portfolio</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
+  <link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -87,8 +87,10 @@ window.onclick = function(event) {
 
   <!-- Projects Section -->
 <section id="projects" class="projects">
-  <h2>Projects</h2>
+  <h2>Key Projects</h2>
+        
   <div class="project-grid">
+
     <div class="project-card" onclick="openModal('project1')">
       <h3>Portfolio Website</h3>
       <p>Personal responsive portfolio to showcase skills and projects.</p>
@@ -105,6 +107,14 @@ window.onclick = function(event) {
     </div>
   </div>
 </section>
+
+
+<!--THIS GODAMNED BUTTON-->
+<div class="hero-content" style="text-align: center; position: relative; z-index: 1;">
+  <a href="projects.html" class="btn">The details</a>
+</div>
+
+
 
 <!-- Modal for Project 1 -->
 <div id="project1" class="modal">

@@ -31,15 +31,19 @@
 </div>
 
  <!-- Filter -->
+    <div class="left-group">
         <div class="filter-section">
-          <div class="logo">Julio<span>C.</span></div>
+          <a href="index.html" style="text-decoration: none;">
+            <div class="logo">Julio<span>C.</span></div>
+          </a>
+
           <label for="filter">Sort by:</label>
           <select id="filter">
             <option value="alpha">Alphabetical</option>
             <option value="start">Start Date</option>
             <option value="recent">Recent / Active First</option>
           </select>
-
+        </div>
                 <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="#about">more info</a></li>
@@ -58,39 +62,122 @@
   <div id="projects-container">
     
     <div class="project-dropdown" 
-         data-start="2025-01-10" 
-         data-end="" 
-         data-name="AI Species Identifier" 
-         data-active="false">
-      <div class="project-header">
-        <span class="project-title">AI Species Identifier</span>
-        <span class="project-dates"></span>
-      </div>
-      <div class="project-content">
-        <p>A machine learning project that identifies penguin species...</p>
-        <div class="project-images">
-          <img src="image1.jpg" alt="AI Species Example">
-          <img src="image2.jpg" alt="Data Visualization">
+          data-start="2024-12-04" 
+          data-end="" 
+          data-name="AI Species Identifier" 
+          data-active="false">
+        <div class="project-header">
+          <span class="project-title">AI Species Identifier</span>
+          <span class="project-dates"></span>
         </div>
-        <a href="https://github.com/username/ai-species" target="_blank" class="btn">View on GitHub</a>
-      </div>
+        <div class="project-content">
+              
+        <p>
+          This project focuses on the <strong>Penguin Species Dataset</strong>,This project was part of a hackathon hosted by <strong> Teesside University</strong>, designed to teach A Level students about machine learning. Participants explored the Penguin Species Dataset to learn how to apply ML techniques, analyze data, and build predictive models.
+</p>
+
+
+        <h3>Potential client motivations</h3>
+        <ul>
+          <li><strong>Understanding Penguin Species Characteristics:</strong> Analyze features like body mass, bill length, and flipper length to study ecological adaptations and behaviors of different penguin species.</li>
+          <li><strong>Predicting Penguin Species:</strong> Train machine learning models to classify penguin species quickly and accurately, assisting researchers and wildlife monitors.</li>
+          <li><strong>Conservation and Environmental Studies:</strong> Explore how physical traits relate to adaptation, helping conservationists target efforts to protect penguin populations.</li>
+          <li><strong>Ecological Insights:</strong> Investigate correlations between physical traits and habitats, and predict population trends based on environmental variables.</li>
+        </ul>
+
+        <h3>Dataset Features</h3>
+        <p>
+          The target variable is the <strong>species</strong> of the penguin (Adelie, Chinstrap, or Gentoo). Features used for prediction include:
+        </p>
+        <ul>
+          <li>Bill length and Bill depth</li>
+          <li>Flipper length</li>
+          <li>Body mass</li>
+          <li>Island (observation location)</li>
+          <li>Sex (male or female)</li>
+        </ul>
+
+        <h3>Machine Learning Approach</h3>
+        <p>
+          The project uses a <strong>Random Forest</strong> classifier due to its high accuracy, versatility, and ability to handle both categorical and continuous features. Random Forest is also robust to noisy data and allows for extraction of <strong>feature importance</strong>, highlighting which traits are most significant in differentiating penguin species.
+        </p>
+
+        <h3>Key Benefits of This Approach</h3>
+        <ul>
+          <li>High accuracy in species classification tasks.</li>
+          <li>Handles noisy and differentiated data effectively.</li>
+          <li>Requires minimal preprocessing or feature scaling.</li>
+          <li>Provides insights into which features most strongly influence predictions.</li>
+        </ul>
+
+        <h3 class="dev-log-heading">
+          <strong>This project demonstrates practical machine learning application in ecological research, offering both predictive power and insight into penguin species characteristics.</strong>
+        </h3>
+        <div class="project-images">
+          <img src="images/Ai-code.png" alt="ML code">
+          <img src="images/AI-distro.png" alt=" ML Stats">
+          <img src="images/Ai-Report.png" alt=" ML Stats">
+        </div>
+        <a href="https://github.com/JPCass07/AI-Penguin-Identifer" 
+          target="_blank" 
+          class="btn" 
+          style="display: block; margin: 20px auto; text-align: center;">
+          View on GitHub
+          </a> 
+     </div>
+
+       
+        
+      
     </div>
 
     <div class="project-dropdown" 
-         data-start="2024-05-20" 
-         data-end="2024-08-15" 
+         data-start="2024-08-21" 
+         data-end="" 
          data-name="Web Portfolio" 
-         data-active="false">
+         data-active="true">
       <div class="project-header">
         <span class="project-title">Web Portfolio</span>
         <span class="project-dates"></span>
       </div>
       <div class="project-content">
-        <p>A portfolio website showing projects and skills...</p>
+        <p><p>This project started as a responsive personal portfolio website built with <strong>Flask, HTML, CSS, and JavaScript</strong>. My original intention was to use Flask for routing, templating, and eventually integrating more dynamic functionality. The site was designed with a sleek dark theme, subtle animations, and project showcase sections, serving as a central hub for my work.</p>
+
+  <p>However, when I decided to host the project on GitHub Pages, I ran into a limitation: GitHub Pages only supports static files (HTML, CSS, JavaScript). Since Flask requires a Python runtime and server-side execution, I had to remove the Flask dependency and restructure the project into a fully static web app. This meant consolidating templates, simplifying the file structure, and ensuring all routes worked through static navigation.</p>
+
+  <p>The benefit of this change is that the site is now lighter, faster, and easier to deploy While I temporarily lose some of Flask's flexibility, this setup allows for free and reliable hosting while I focus on front-end polish and content.</p>
+
+  <h3>Looking forward, I plan to:</h3>
+  <ul>
+    <li>Continue developing new features in pure HTML, CSS, and JavaScript >.</li>
+    <li>Showcase additional projects as I complete them.</li>
+    <li>Add a work experience section as I gain more industry exposure.</li>
+    <li>Potentially revisit Flask (or another backend framework) in the future when I need server-side features, but for now, GitHub Pages provides the perfect static hosting solution.</li>
+  </ul>
+
+  <h3>What I Learned:</h3>
+  <ul>
+    <li>How to <strong>convert a Flask project into a fully static web app</strong>, including restructuring templates and routing.</li>
+    <li>The limitations and benefits of <strong>static hosting</strong> versus server-side frameworks.</li>
+    <li>Practical experience with <strong>HTML, CSS, and JavaScript</strong> to create responsive, interactive interfaces.</li>
+    <li>How to <strong>organize and deploy a project on GitHub Pages</strong>, including domain verification and static file management.</li>
+    <li>Planning a project roadmap: adding features incrementally while keeping the site functional and deployable.</li>
+  </ul>
+
+  <h3 class="dev-log-heading">
+  <strong>This is the web app you are currently on, and it will evolve as I progress on my development journey.</strong>
+</h3>
+</p>
         <div class="project-images">
-          <img src="portfolio1.jpg" alt="Portfolio Homepage">
+          <img src="images/web-app-1.png" alt="Portfolio Homepage">
+          <img src="images/web-app-2.png" alt="Portfolio Homepage">
         </div>
-        <a href="https://github.com/username/web-portfolio" target="_blank" class="btn">View on GitHub</a>
+        <a href="https://github.com/JPCass07/Portfolio" 
+   target="_blank" 
+   class="btn" 
+   style="display: block; margin: 20px auto; text-align: center;">
+   View on GitHub
+</a>
       </div>
     </div>
   </div>

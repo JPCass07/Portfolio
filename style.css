@@ -41,6 +41,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
+  z-index: 301;
 }
 .nav-links li {
   margin-left: 2rem;
@@ -300,7 +301,7 @@ footer {
 .btn {
   display: inline-block;
   margin-top: 20px;
-  background: linear-gradient(45deg, #0b052b, #00311990);
+  background: linear-gradient(45deg, #05202b, #014f2990);
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
   text-decoration: none;
@@ -325,7 +326,7 @@ footer {
 }
 
 .project-header {
-  background: linear-gradient(45deg, #a45bff, #4ec3ff);
+  background: linear-gradient(45deg, #30006b, #050045);
   color: #fff;
   font-weight: bold;
   padding: 0.8rem 1.5rem;
@@ -337,7 +338,8 @@ footer {
 }
 
 .project-header:hover {
-  background: linear-gradient(45deg, #8741cc, #3490cc);
+  background: linear-gradient(45deg, #30006b, #011f51);
+  
 }
 
 .project-dates {
@@ -369,12 +371,21 @@ footer {
 
 /* Filter section */
 .filter-section {
-  position: relative;
-  margin: 20px 0;
   display: flex;
+  justify-content: space-between; /* left stays left, right stays right */
   align-items: center;
   gap: 10px;
+  margin: 20px 0;
+  flex-wrap: nowrap; /* prevent any wrapping */
   z-index: 300;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and select */
+  flex-shrink: 1; /* allows shrinking if screen is small */
+  z-index: 30;
 }
 
 .filter-section select {
@@ -382,5 +393,15 @@ footer {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  min-width: 120px; /* optional: prevents the select from being too narrow */
+  z-index: 301;
 }
 
+
+
+.dev-log-heading {
+  text-align: center;
+  max-width: 800px;   /* optional, for better readability */
+  margin: 0 auto;
+  line-height: 1.4;
+}

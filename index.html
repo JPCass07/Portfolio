@@ -1,192 +1,785 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julio Paulo Cassinda | Portfolio</title>
-
-  <link rel="stylesheet" href="style.css">
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julio Cassinda · Computer Science, University of Reading</title>
+  <meta name="description" content="Julio Cassinda: second-year Computer Science student at the University of Reading, Tanium's first UK global support intern, and builder of Flytrap, a honeypot lab. Open to 2027 forward deployed engineering and security internships.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Julio Cassinda · Close to the customer, deep in the system">
+  <meta property="og:description" content="Computer Science at Reading. Tanium Certified Operator. Building Flytrap, a honeypot lab. Open to 2027 FDE and security internships.">
+  <meta property="og:image" content="https://jpcass07.github.io/Portfolio/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Julio Cassinda. Close to the customer, deep in the system. A pen-line cube inside thin rings.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("jc-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
-  <script>
-function openModal(id) {
-  document.getElementById(id).style.display = 'block';
-}
+  <!-- The mark: a pen-line cube, one endpoint of many, with its top face in violet -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="cube" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18.5" style="fill:none;stroke:var(--line)"/>
+      <path d="M20 7 31.5 13.5 20 20 8.5 13.5Z" style="fill:var(--accent)"/>
+      <path d="M20 7 31.5 13.5V26.5L20 33 8.5 26.5V13.5ZM8.5 13.5 20 20 31.5 13.5M20 20V33" style="fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round"/>
+    </symbol>
+    <symbol id="cube-line" viewBox="0 0 40 40">
+      <path d="M20 4 34 12V28L20 36 6 28V12ZM6 12 20 20 34 12M20 20V36" style="fill:none;stroke:currentColor;stroke-width:1.2;stroke-linejoin:round"/>
+    </symbol>
+  </svg>
 
-function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
-}
+  <a class="skip" href="#main">Skip to content</a>
 
-// Close when clicking outside modal
-window.onclick = function(event) {
-  document.querySelectorAll('.modal').forEach(modal => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-}
-</script>
-
-   <!-- cubes-->
-     <div class="cube-container">
- <!-- 15 cubes -->
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-</div>
-
-  <!-- Header / Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Julio<span>C.</span></div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Julio Cassinda, back to top">
+        <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#cube"/></svg>
+        <span>Julio<b>C.</b></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#tanium">Tanium</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#now">Now</a></li>
+          <li><a href="#toolkit">Toolkit</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="top-act">
+        <a class="pill pill--sm" href="#contact">Get in touch</a>
+        <button class="icon-btn" type="button" id="theme" aria-label="Switch colour theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+        </button>
+      </div>
+    </div>
   </header>
-  <canvas id="bg"></canvas>
 
-  <!-- Hero Section -->
-  <section class="hero">
- 
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="cubes" aria-hidden="true">
+        <svg class="cube" style="--x:58%;--y:9%;--s:88px;--d:26s;--r:18deg" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+        <svg class="cube cube--acc" style="--x:79%;--y:5%;--s:44px;--d:21s;--tx:-30px;--ty:26px;--r:-30deg" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+        <svg class="cube" style="--x:90%;--y:30%;--s:64px;--d:29s;--tx:-20px;--ty:-24px" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+        <svg class="cube" style="--x:4%;--y:70%;--s:52px;--d:24s;--tx:30px;--r:-20deg" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+        <svg class="cube cube--acc" style="--x:47%;--y:62%;--s:30px;--d:19s;--tx:20px;--ty:20px;--r:40deg" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+        <svg class="cube" style="--x:70%;--y:50%;--s:110px;--d:32s;--tx:-16px;--ty:18px;--r:-12deg" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+        <svg class="cube" style="--x:28%;--y:3%;--s:36px;--d:23s;--tx:22px;--ty:24px" viewBox="0 0 40 40"><use href="#cube-line"/></svg>
+      </div>
 
-<!-- hero main-->
-    <div class="hero-content">
-      <h1>Hi, I'm <span>Julio Paulo Cassinda</span></h1>
-      <p>A Computer Science Student passionate about cybersecurity, development, and problem solving.</p>
-      <a href="#projects" class="btn">View My Work</a>
+      <div class="wrap">
+        <div class="hero__grid">
+          <h1 id="hero-title">
+            <span class="rise"><span style="--i:0">Close</span> <span style="--i:1">to</span> <span style="--i:2">the</span> <span style="--i:3">customer,</span></span>
+            <span class="rise dim"><span style="--i:4">deep</span> <span style="--i:5">in</span> <span style="--i:6">the</span> <span style="--i:7"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#cube"/></svg> system.<span class="cursor" aria-hidden="true"></span></span></span>
+          </h1>
+          <div class="hero__side">
+            <div class="tags">
+              <span class="tag"><i></i>Computer Science · Reading</span>
+              <span class="tag"><i class="ink"></i>Tanium Certified Operator</span>
+            </div>
+            <p>I'm <strong>Julio Cassinda</strong>, a second-year Computer Science student at the University of Reading. This summer I was <strong>Tanium's first UK-based global support intern</strong>. Now I'm building a honeypot lab, and lining up forward deployed engineering and security work for 2027.</p>
+            <p class="live"><span class="live__dot" aria-hidden="true"></span>Open to 2027 internships · Reading, UK · happy to travel</p>
+            <div class="pills">
+              <a class="pill" href="#tanium">The Tanium work <span class="pill__arrow" aria-hidden="true">→</span></a>
+              <a class="pill pill--ghost" href="https://github.com/JPCass07">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage stage--wide reveal">
+          <ul class="readouts" aria-label="At a glance">
+            <li class="readout"><span class="readout__k">Tanium UK support intern</span><span class="readout__v">No. 1<small>the first</small></span></li>
+            <li class="readout"><span class="readout__k">Weeks to certification</span><span class="readout__v">6<small>TCO, Aug 2026</small></span></li>
+            <li class="readout"><span class="readout__k">Presented to</span><span class="readout__v">EMEA<small>support leadership</small></span></li>
+            <li class="readout"><span class="readout__k">Flytrap · Lab 01</span><span class="readout__v">304<small>SYN probes traced</small></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ticker" aria-label="Areas I work in">
+        <ul class="ticker__track">
+          <li>Endpoint management</li>
+          <li>Case triage</li>
+          <li>Claude skills + MCP</li>
+          <li>Compliance and vulnerabilities</li>
+          <li>Docker</li>
+          <li>Wireshark</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>SQL</li>
+          <li>Honeypots</li>
+          <li aria-hidden="true">Endpoint management</li>
+          <li aria-hidden="true">Case triage</li>
+          <li aria-hidden="true">Claude skills + MCP</li>
+          <li aria-hidden="true">Compliance and vulnerabilities</li>
+          <li aria-hidden="true">Docker</li>
+          <li aria-hidden="true">Wireshark</li>
+          <li aria-hidden="true">Python</li>
+          <li aria-hidden="true">Java</li>
+          <li aria-hidden="true">SQL</li>
+          <li aria-hidden="true">Honeypots</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 01 Tanium ============ -->
+    <section class="section" id="tanium" aria-labelledby="tanium-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow reveal"><b>No. 01</b>Experience</p>
+          <h2 id="tanium-title" class="reveal"><span>Tanium, summer 2026.</span><span class="dim">The first of its kind in the UK.</span></h2>
+          <p class="lede reveal">Tanium makes an endpoint management and security platform: IT and security teams use it to see, query, patch and secure every device they run, in real time. Its Krakow and US offices had taken support interns for years. Reading hadn't, until this placement.</p>
+        </header>
+
+        <div class="role">
+          <article class="panel reveal" aria-label="Role summary">
+            <header class="panel__head"><span>Intern Technical Support Engineer</span><time datetime="2026-07/2026-09">Jul – Sep 2026</time></header>
+            <ul class="panel__rows">
+              <li><span>Team</span><b>Global Support · Reading, hybrid</b><i></i></li>
+              <li><span>Certification</span><b>Tanium Certified Operator</b><i></i></li>
+              <li><span>Case work</span><b>Cleared by internal testing</b><i></i></li>
+              <li><span>Deepest module</span><b>Tanium Comply</b><i class="ink"></i></li>
+              <li><span>Closing project</span><b>Presented at EMEA Global Support Week</b><i></i></li>
+            </ul>
+            <footer class="panel__foot"><span>TCO issued</span><b>14 Aug 2026</b></footer>
+          </article>
+
+          <ol class="did">
+            <li class="reveal">
+              <div>
+                <h3>Learned the platform end to end</h3>
+                <p>From the architecture down to individual modules, going deepest on Comply: checking endpoints against security configuration benchmarks and known vulnerabilities, then reporting what fails and where.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Certified in six weeks</h3>
+                <p>Earned the Tanium Certified Operator badge alongside the day job, through self-study, hands-on time in the product and a lot of questions to colleagues.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Triaged real cases</h3>
+                <p>Passed internal testing to work support cases, then did first-pass triage: read the problem, gather the right information, and send it down the right troubleshooting path.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Shadowed engineers on live calls</h3>
+                <p>Watched experienced engineers handle enterprise customers under pressure, and wrote internal case notes that let the next engineer pick a case up cold.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Built an AI tool and pitched it to leadership</h3>
+                <p>With the EMEA intern cohort, built Claude skills for support engineers and presented them to senior support staff and management.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <article class="feature reveal" id="intern-project" aria-labelledby="ip-title">
+          <div class="feature__text">
+            <span class="tag tag--2"><i></i>The closing project</span>
+            <h3 id="ip-title">Claude skills that open a case the way a senior engineer would.</h3>
+            <p>A new case's first reply sets the tone, and how good it was depended on who picked it up. With interns from Reading and Krakow, I built Claude skills that each handle one part of that first response: how much detail to ask for, how to structure the reply, and which troubleshooting path to start. MCP connectors let the skills work from real product information instead of guessing.</p>
+            <p>The questions in them came from what I'd learned shadowing calls and triaging cases.</p>
+            <p class="mono">Internal tool · described here at the level of approach and role</p>
+          </div>
+          <div class="stage" role="img" aria-label="A new case goes to Claude skills, which reach Tanium through MCP connectors">
+            <svg class="flow" viewBox="0 0 560 150" aria-hidden="true">
+              <circle class="ring ring--dash" cx="222" cy="75" r="64"/>
+              <circle class="ring" cx="222" cy="75" r="52"/>
+              <path class="wire" d="M112 75H182"/>
+              <path class="wire" d="M262 75H322"/>
+              <path class="wire" d="M418 75H446"/>
+              <rect class="paper" x="2" y="53" width="110" height="44" rx="22"/>
+              <text class="t-serif" x="57" y="81" text-anchor="middle">New case</text>
+              <circle class="paper" cx="222" cy="75" r="40"/>
+              <text class="t-serif" x="222" y="74" text-anchor="middle">Claude</text>
+              <text class="t-mono" x="222" y="90" text-anchor="middle">skills</text>
+              <rect class="paper" x="322" y="53" width="96" height="44" rx="22"/>
+              <text class="t-serif" x="370" y="81" text-anchor="middle">MCP</text>
+              <rect class="paper" x="446" y="53" width="112" height="44" rx="22"/>
+              <text class="t-serif" x="502" y="81" text-anchor="middle">Tanium</text>
+              <text class="t-mono" x="57" y="122" text-anchor="middle">Customer report</text>
+              <text class="t-mono" x="222" y="150" text-anchor="middle">Detail · reply · path</text>
+              <text class="t-mono" x="502" y="122" text-anchor="middle">Product data</text>
+              <circle class="pkt" cx="112" cy="75" r="3.5" style="--run:70px"/>
+              <circle class="pkt" cx="262" cy="75" r="3.5" style="--run:60px;--pd:.9s"/>
+              <circle class="pkt" cx="418" cy="75" r="3.5" style="--run:28px;--pd:1.6s"/>
+            </svg>
+            <svg class="flow flow--v" viewBox="0 0 220 396" aria-hidden="true">
+              <circle class="ring ring--dash" cx="110" cy="152" r="64"/>
+              <circle class="ring" cx="110" cy="152" r="52"/>
+              <path class="wire" d="M110 50V112"/>
+              <path class="wire" d="M110 192V262"/>
+              <path class="wire" d="M110 306V344"/>
+              <rect class="paper" x="50" y="6" width="120" height="44" rx="22"/>
+              <text class="t-serif" x="110" y="34" text-anchor="middle">New case</text>
+              <circle class="paper" cx="110" cy="152" r="40"/>
+              <text class="t-serif" x="110" y="151" text-anchor="middle">Claude</text>
+              <text class="t-mono" x="110" y="167" text-anchor="middle">skills</text>
+              <rect class="paper" x="58" y="262" width="104" height="44" rx="22"/>
+              <text class="t-serif" x="110" y="290" text-anchor="middle">MCP</text>
+              <rect class="paper" x="50" y="344" width="120" height="44" rx="22"/>
+              <text class="t-serif" x="110" y="372" text-anchor="middle">Tanium</text>
+              <circle class="pkt pkt--v" cx="110" cy="50" r="3.5" style="--run:62px"/>
+              <circle class="pkt pkt--v" cx="110" cy="192" r="3.5" style="--run:70px;--pd:.9s"/>
+              <circle class="pkt pkt--v" cx="110" cy="306" r="3.5" style="--run:38px;--pd:1.6s"/>
+            </svg>
+          </div>
+        </article>
+
+        <div class="carry" id="carry" data-lens="both">
+          <div class="carry__top">
+            <h3 class="reveal"><span>Six things I'd bring</span><span class="dim">to the next team.</span></h3>
+            <fieldset class="lens">
+              <legend>Read for</legend>
+              <button class="chip" type="button" data-lens="both" aria-pressed="true">Both</button>
+              <button class="chip" type="button" data-lens="fde" aria-pressed="false">Forward deployed</button>
+              <button class="chip" type="button" data-lens="sec" aria-pressed="false">Security</button>
+            </fieldset>
+          </div>
+
+          <div class="carry-head" aria-hidden="true">
+            <span>What I did at Tanium</span>
+            <span class="fde"><b>→</b> In a forward deployed role</span>
+            <span class="sec"><b>→</b> In a security role</span>
+          </div>
+
+          <ol class="carry-list" id="carry-list">
+            <li class="carry-row reveal">
+              <div>
+                <h4>Triage and structured troubleshooting</h4>
+                <p>Turning a vague report into a defined question: what's broken, since when, on which endpoints, in which module.</p>
+              </div>
+              <dl>
+                <div class="fde"><dt>Forward deployed</dt><dd>Scoping a customer's messy problem in the first meeting, then taking the path that rules out the likeliest causes first.</dd></div>
+                <div class="sec"><dt>Security</dt><dd>Alert triage: the same narrowing questions, asked of a detection instead of a ticket.</dd></div>
+              </dl>
+            </li>
+            <li class="carry-row reveal">
+              <div>
+                <h4>Endpoint management at scale</h4>
+                <p>Asking questions of devices, deploying actions and patching across estates of thousands of machines. Certified as an operator.</p>
+              </div>
+              <dl>
+                <div class="fde"><dt>Forward deployed</dt><dd>Learning a complex product fast enough to run it in someone else's environment. Six weeks to certification is the evidence.</dd></div>
+                <div class="sec"><dt>Security</dt><dd>Knowing what full visibility of an estate looks like, which is the ground truth for detection and incident response.</dd></div>
+              </dl>
+            </li>
+            <li class="carry-row reveal">
+              <div>
+                <h4>Compliance and vulnerability management</h4>
+                <p>Working in Tanium Comply: benchmark checks, vulnerability scans, and the reports that show where an estate falls short.</p>
+              </div>
+              <dl>
+                <div class="fde"><dt>Forward deployed</dt><dd>Turning findings into fix work a customer will actually schedule, in the order that matters to them.</dd></div>
+                <div class="sec"><dt>Security</dt><dd>Measuring security posture and why configuration standards matter: the daily work of vulnerability management and GRC teams.</dd></div>
+              </dl>
+            </li>
+            <li class="carry-row reveal">
+              <div>
+                <h4>Applied AI over live systems</h4>
+                <p>Claude skills plus MCP connectors, grounded in product data instead of the model's memory, and checked against what an experienced engineer would do.</p>
+              </div>
+              <dl>
+                <div class="fde"><dt>Forward deployed</dt><dd>Wiring AI into a customer's own tools through an open standard, and breaking their job into steps it can do reliably.</dd></div>
+                <div class="sec"><dt>Security</dt><dd>AI-assisted triage with a human in the loop. The MCP server planned for Flytrap will propose blocks, never make them.</dd></div>
+              </dl>
+            </li>
+            <li class="carry-row reveal">
+              <div>
+                <h4>Writing for the next person</h4>
+                <p>Case notes ordered as symptoms, what was checked, what was found, next step. Listening first on customer calls.</p>
+              </div>
+              <dl>
+                <div class="fde"><dt>Forward deployed</dt><dd>Working on site with a client: listen, ask the question that narrows it, set expectations, follow up in writing.</dd></div>
+                <div class="sec"><dt>Security</dt><dd>Incident notes and shift handovers someone else can act on without a call.</dd></div>
+              </dl>
+            </li>
+            <li class="carry-row reveal">
+              <div>
+                <h4>Presenting to leadership</h4>
+                <p>A live demo for senior support staff and management at EMEA Global Support Week, as one of a cross-office team.</p>
+              </div>
+              <dl>
+                <div class="fde"><dt>Forward deployed</dt><dd>Problem, approach, demo, benefit, in that order: the shape of a readout for a customer's executives.</dd></div>
+                <div class="sec"><dt>Security</dt><dd>Explaining risk to people who care about outcomes, not packets.</dd></div>
+              </dl>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="also reveal" aria-labelledby="also-title">
+          <div>
+            <p class="mono">Alongside · since May 2026</p>
+            <h3 id="also-title">Currys, Reading</h3>
+          </div>
+          <p>Part-time computing sales colleague. Customers ask for a product when what they really have is a problem, so the job is finding the need behind the request, then explaining processors, memory and storage as "what this means for you". It's the same first step as opening a support case, and the core of working on site with a client.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ 02 Projects ============ -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow reveal"><b>No. 02</b>Projects</p>
+          <h2 id="work-title" class="reveal"><span>Built, tested,</span><span class="dim">written up.</span></h2>
+          <p class="lede reveal">Each one opens into a short write-up: the problem, what I did, what went wrong and what it taught me.</p>
+        </header>
+
+        <div class="sortbar">
+          <p class="mono" id="count" aria-live="polite">5 projects · most recent first</p>
+          <fieldset class="lens">
+            <legend>Sort</legend>
+            <button class="chip" type="button" data-sort="recent" aria-pressed="true">Recent first</button>
+            <button class="chip" type="button" data-sort="start" aria-pressed="false">Start date</button>
+            <button class="chip" type="button" data-sort="az" aria-pressed="false">A–Z</button>
+          </fieldset>
+        </div>
+
+        <ul class="grid" id="projects">
+          <!-- Flytrap -->
+          <li class="project project--wide reveal" data-title="Flytrap" data-start="2026-10" data-end="9999-12">
+            <div class="stage">
+              <svg viewBox="0 0 300 160" aria-hidden="true">
+                <text class="t-mono" x="4" y="14">lab · 172.30.0.0/24 · no egress</text>
+                <circle class="ring ring--dash" cx="196" cy="84" r="66"/>
+                <circle class="ring" cx="196" cy="84" r="52"/>
+                <rect class="paper" x="6" y="62" width="64" height="44" rx="4"/>
+                <text class="t-mono" x="16" y="80">attacker</text>
+                <path class="acc-line" d="M16 92h8"/>
+                <path class="wire" d="M70 84H162"/>
+                <rect class="paper" x="162" y="50" width="68" height="68" rx="4"/>
+                <path class="pen" d="M172 66h40M172 80h48M172 94h30"/>
+                <circle class="acc-fill" cx="220" cy="66" r="2.5"/>
+                <circle class="acc-fill ping" cx="220" cy="66" r="2.5"/>
+                <text class="t-mono" x="172" y="111">decoy</text>
+                <path class="pen draw" pathLength="1" d="M196 118V146H290"/>
+                <text class="t-mono" x="226" y="140">pcap</text>
+                <circle class="pkt" cx="70" cy="84" r="3.5" style="--run:92px"/>
+                <circle class="pkt" cx="70" cy="84" r="3.5" style="--run:92px;--pd:1.3s"/>
+              </svg>
+            </div>
+            <div class="project__meta">
+              <p class="idx"><b>No. 01</b><span>Oct 2026 – now</span><span>Personal</span></p>
+              <h3>Flytrap honeypot lab</h3>
+              <p class="project__desc">A self-hosted honeypot and traffic-analysis lab. Decoy services draw attacks, every packet is captured, and the logs get matched to the packets so an analyst can see exactly what happened. Phase 1 runs today; next it gets one data model across sensors and an MCP server so Claude can query it.</p>
+              <div class="project__foot">
+                <ul class="stack"><li>Docker</li><li>Python</li><li>Cowrie</li><li>tcpdump</li><li>Wireshark</li></ul>
+                <span class="tag tag--2"><i class="ok"></i>Phase 1 running</span>
+              </div>
+              <button class="more" type="button" aria-haspopup="dialog">Read the write-up <span aria-hidden="true">→</span><span class="sr-only">: Flytrap honeypot lab</span></button>
+            </div>
+            <div class="project__detail">
+              <div class="detail">
+                <section>
+                  <h4>Why</h4>
+                  <p>To learn packet analysis and production-grade security by running something that really gets attacked, and to practise the forward deployed part: taking messy output from different tools and turning it into something a person can act on.</p>
+                </section>
+                <section>
+                  <h4>What runs today · phase 1</h4>
+                  <ul>
+                    <li>An isolated Docker network with <strong>no route out</strong> (<code>internal: true</code>), so it is safe to attack anywhere. I checked: no DNS, and <code>Network unreachable</code> for direct IPs.</li>
+                    <li><strong>Cowrie</strong> for SSH and Telnet, plus an HTTP decoy I wrote using only the Python standard library: a fake router login and bait files like <code>/.env</code>, logging every request as JSON lines.</li>
+                    <li>Rotating <strong>tcpdump</strong> captures on the lab bridge, so every packet opens in Wireshark.</li>
+                    <li>An attacker script that replays a typical opportunistic attack: SYN scan, fingerprinting, web probing, credential stuffing, SSH brute force and post-login commands.</li>
+                    <li>Hardened containers: non-root users, every Linux capability dropped (capture keeps only <code>NET_RAW</code> and <code>NET_ADMIN</code>), <code>no-new-privileges</code>, a read-only file system and a 16 KB cap on request bodies.</li>
+                  </ul>
+                </section>
+                <ul class="readouts">
+                  <li class="readout"><span class="readout__k">SYN probes</span><span class="readout__v">304</span></li>
+                  <li class="readout"><span class="readout__k">Ports open</span><span class="readout__v">2<small>of 102</small></span></li>
+                  <li class="readout"><span class="readout__k">Tools, one IP</span><span class="readout__v">3</span></li>
+                </ul>
+                <section>
+                  <h4>Lab 01 · what I found</h4>
+                  <ul>
+                    <li>Traced the whole attack in Wireshark: 304 SYN probes, SYN-ACK from the two open ports and RST from every closed one.</li>
+                    <li>Read a credential-stuffing login in plaintext over HTTP, and showed why the SSH password can't be read: encryption starts at the key exchange, before authentication.</li>
+                    <li>Joined a decoy log line to its packets by source port and timestamp. That join is what the phase 3 collector will do automatically.</li>
+                    <li>One IP switched tools three times (zgrab, curl, Hydra), so events have to be grouped by IP and session, not by user agent.</li>
+                    <li><strong>Both of my honeypots can be fingerprinted.</strong> The decoy answers <code>HTTP/1.0</code> under a lighttpd banner, and Cowrie claims OpenSSH 9.2 while offering ciphers OpenSSH dropped years ago. Both are on the fix list.</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4>The first real bug</h4>
+                  <p>The capture container restart-looped with <code>Permission denied</code>. With every capability dropped, even root inside the container has no <code>DAC_OVERRIDE</code>, so it couldn't write to a host-owned folder. I made the folder writable in setup instead of giving the capability back, which keeps capture at the two capabilities it needs.</p>
+                </section>
+                <section>
+                  <h4>From the decision log</h4>
+                  <table class="log">
+                    <thead><tr><th scope="col">Chose</th><th scope="col">Over</th><th scope="col">Because</th></tr></thead>
+                    <tbody>
+                      <tr><td>Lab network is internal-only</td><td>A normal bridge</td><td>A compromised sensor can't reach the internet</td></tr>
+                      <tr><td>Standard-library decoy</td><td>Flask or FastAPI</td><td>No third-party code to patch on an internet-facing service</td></tr>
+                      <tr><td>Banners come from <code>.env</code></td><td>Hard-coded</td><td>The code is public, so a live deployment mustn't match the defaults</td></tr>
+                    </tbody>
+                  </table>
+                </section>
+                <section>
+                  <h4>Next</h4>
+                  <p>Phase 2: my own certificate authority, TLS on the decoy and mutual TLS between services. Phase 3: one data model across every sensor, a triage app with write-back actions, and an MCP server so Claude can answer "what happened in the last hour?".</p>
+                </section>
+                <p class="sheet__note">The repository goes public with v0.1.0. Real attacker data is never published unredacted.</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Claude skills -->
+          <li class="project reveal" data-title="Claude skills for enterprise support" data-start="2026-08" data-end="2026-09">
+            <div class="stage">
+              <svg viewBox="0 0 240 120" aria-hidden="true">
+                <circle class="ring ring--dash" cx="120" cy="60" r="54"/>
+                <circle class="ring" cx="120" cy="60" r="44"/>
+                <path class="wire" d="M68 60H88"/>
+                <path class="wire" d="M152 60H172"/>
+                <rect class="paper" x="2" y="42" width="66" height="36" rx="18"/>
+                <text class="t-serif" x="35" y="65" text-anchor="middle" style="font-size:15px">Case</text>
+                <circle class="paper" cx="120" cy="60" r="32"/>
+                <text class="t-serif" x="120" y="65" text-anchor="middle" style="font-size:15px">Skills</text>
+                <rect class="paper" x="172" y="42" width="66" height="36" rx="18"/>
+                <text class="t-serif" x="205" y="65" text-anchor="middle" style="font-size:15px">MCP</text>
+                <circle class="pkt" cx="68" cy="60" r="3" style="--run:20px"/>
+                <circle class="pkt" cx="152" cy="60" r="3" style="--run:20px;--pd:1.1s"/>
+              </svg>
+            </div>
+            <div class="project__meta">
+              <p class="idx"><b>No. 02</b><span>Aug – Sep 2026</span><span>Tanium</span></p>
+              <h3>Claude skills for enterprise support</h3>
+              <p class="project__desc">Claude skills connected to Tanium over MCP, giving support engineers a structured, consistent first response to a new case. Presented at EMEA Global Support Week.</p>
+              <div class="project__foot">
+                <ul class="stack"><li>Claude</li><li>Skills</li><li>MCP</li></ul>
+                <span class="tag tag--2"><i class="ink"></i>Internal</span>
+              </div>
+              <button class="more" type="button" aria-haspopup="dialog">Read the write-up <span aria-hidden="true">→</span><span class="sr-only">: Claude skills for enterprise support</span></button>
+            </div>
+            <div class="project__detail">
+              <div class="detail">
+                <section>
+                  <h4>The problem</h4>
+                  <p>The first reply to a new case has to acknowledge the problem, ask for the right information and start the right troubleshooting. The level of detail, the order of questions and the path taken all varied from engineer to engineer.</p>
+                </section>
+                <section>
+                  <h4>What I did</h4>
+                  <ul>
+                    <li><strong>Developed specialised Claude skills</strong>: packaged instructions Claude loads when a task calls for them. Each covered one part of the workflow: setting the level of detail, structuring the first customer reply, or choosing a troubleshooting path.</li>
+                    <li><strong>Connected them to Tanium through MCP connectors</strong>, so they work from real product information rather than the model's memory.</li>
+                    <li><strong>Encoded support practice</strong> from shadowing and triage: which questions to ask first, which details matter for which module, when to escalate.</li>
+                    <li>Split the work, integrated the parts and built the demo with interns in Reading and Krakow, then <strong>presented it at EMEA Global Support Week</strong> to senior support staff and management.</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4>What it taught me</h4>
+                  <p>Skill design is a design discipline: the structure of the instructions matters as much as the wording. And a tool for engineers has to fit how they really work, which is why doing the job first made the design better.</p>
+                </section>
+                <div class="callout"><p>This was an internal tool, so there are no screenshots, prompts or internal names here. I'm happy to walk through the architecture and my part in an interview.</p></div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Java -->
+          <li class="project reveal" data-title="Object-oriented Java application" data-start="2026-01" data-end="2026-05">
+            <div class="stage">
+              <svg viewBox="0 0 240 150" aria-hidden="true">
+                <rect class="paper paper--dash" x="78" y="8" width="84" height="42" rx="3"/>
+                <text class="t-mono" x="120" y="24" text-anchor="middle">«interface»</text>
+                <path class="pen" d="M92 36h56"/>
+                <path class="pen" d="M60 98V76H180V98" style="stroke:var(--ink-2);stroke-dasharray:4 3"/>
+                <path class="pen" d="M120 76V58"/>
+                <path class="paper" d="M113 60 120 50 127 60Z" style="stroke:var(--accent)"/>
+                <rect class="paper" x="18" y="98" width="84" height="46" rx="3"/>
+                <path class="pen" d="M18 114H102M28 126h48M28 136h34"/>
+                <rect class="paper" x="138" y="98" width="84" height="46" rx="3"/>
+                <path class="pen" d="M138 114H222M148 126h52M148 136h30"/>
+                <circle class="acc-fill" cx="92" cy="106" r="2.5"/>
+                <circle class="acc-fill" cx="212" cy="106" r="2.5"/>
+              </svg>
+            </div>
+            <div class="project__meta">
+              <p class="idx"><b>No. 03</b><span>Jan – May 2026</span><span>University of Reading</span></p>
+              <h3>Object-oriented Java application</h3>
+              <p class="project__desc">An individual Java application for CS1OP, built to a coursework spec and written up in a design report. My strongest piece of first-year work.</p>
+              <div class="project__foot">
+                <ul class="stack"><li>Java</li><li>JUnit</li><li>GUI</li></ul>
+                <span class="tag tag--2"><i class="ok"></i>Top project mark</span>
+              </div>
+              <button class="more" type="button" aria-haspopup="dialog">Read the write-up <span aria-hidden="true">→</span><span class="sr-only">: Object-oriented Java application</span></button>
+            </div>
+            <div class="project__detail">
+              <div class="detail">
+                <section>
+                  <h4>What it was</h4>
+                  <p>The CS1OP coursework brings a semester of object-oriented design together: build a working application from a specification, then explain and justify the design in a report.</p>
+                </section>
+                <section>
+                  <h4>What I did</h4>
+                  <ul>
+                    <li>Modelled the problem as objects with clear responsibilities, choosing between <strong>inheritance and composition</strong> and using <strong>interfaces</strong> to keep parts swappable.</li>
+                    <li>Built a user interface with <strong>event handling</strong>, and tested with <strong>JUnit</strong>.</li>
+                    <li>Wrote the design report. Its mark suggests I could justify the choices, not only make them.</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4>Where it started</h4>
+                  <p>My first Java was CS1IP the term before: small programs like a seven-segment display built from lookup tables, and input validation for a pricing calculator. They're on GitHub as <a href="https://github.com/JPCass07/coursework1">coursework1</a>. The jump from those to a structured application in one academic year is the point.</p>
+                </section>
+              </div>
+            </div>
+          </li>
+
+          <!-- Penguins -->
+          <li class="project reveal" data-title="Penguin species classifier" data-start="2024-12" data-end="2024-12">
+            <div class="stage">
+              <svg viewBox="0 0 240 150" aria-hidden="true">
+                <g class="pen">
+                  <path d="M50 22 34 46M50 22 66 46M34 46 26 70M34 46 42 70M66 46 58 70M66 46 74 70"/>
+                  <path d="M120 22 104 46M120 22 136 46M104 46 96 70M104 46 112 70M136 46 128 70M136 46 144 70"/>
+                  <path d="M190 22 174 46M190 22 206 46M174 46 166 70M174 46 182 70M206 46 198 70M206 46 214 70"/>
+                </g>
+                <g class="paper">
+                  <circle cx="50" cy="22" r="4.5"/><circle cx="34" cy="46" r="4"/><circle cx="66" cy="46" r="4"/>
+                  <circle cx="120" cy="22" r="4.5"/><circle cx="104" cy="46" r="4"/><circle cx="136" cy="46" r="4"/>
+                  <circle cx="190" cy="22" r="4.5"/><circle cx="174" cy="46" r="4"/><circle cx="206" cy="46" r="4"/>
+                </g>
+                <g class="acc-fill"><circle cx="42" cy="72" r="3.5"/><circle cx="112" cy="72" r="3.5"/><circle cx="198" cy="72" r="3.5"/></g>
+                <g style="fill:var(--ink-2)"><circle cx="26" cy="72" r="2.5"/><circle cx="58" cy="72" r="2.5"/><circle cx="74" cy="72" r="2.5"/><circle cx="96" cy="72" r="2.5"/><circle cx="128" cy="72" r="2.5"/><circle cx="144" cy="72" r="2.5"/><circle cx="166" cy="72" r="2.5"/><circle cx="182" cy="72" r="2.5"/><circle cx="214" cy="72" r="2.5"/></g>
+                <path class="acc-line draw" pathLength="1" d="M42 80 104 112"/>
+                <path class="acc-line draw" pathLength="1" d="M112 80 120 110"/>
+                <path class="acc-line draw" pathLength="1" d="M198 80 136 112"/>
+                <rect class="paper" x="78" y="112" width="84" height="30" rx="15"/>
+                <text class="t-serif" x="120" y="132" text-anchor="middle" style="font-size:15px">Gentoo</text>
+              </svg>
+            </div>
+            <div class="project__meta">
+              <p class="idx"><b>No. 04</b><span>2024</span><span>Teesside University hackathon</span></p>
+              <h3>Penguin species classifier</h3>
+              <p class="project__desc">A random forest that tells Adélie, Chinstrap and Gentoo penguins apart from body measurements, built in a day with two other students.</p>
+              <div class="project__foot">
+                <ul class="stack"><li>Python</li><li>pandas</li><li>scikit-learn</li></ul>
+                <span class="tag tag--2"><i class="off"></i>Team of 3</span>
+              </div>
+              <button class="more" type="button" aria-haspopup="dialog">Read the write-up <span aria-hidden="true">→</span><span class="sr-only">: Penguin species classifier</span></button>
+            </div>
+            <div class="project__detail">
+              <div class="detail">
+                <section>
+                  <h4>Context</h4>
+                  <p>A hackathon run by Teesside University to teach A level students machine learning, using the Palmer Penguins dataset: measurements of real penguins from three islands in Antarctica.</p>
+                </section>
+                <section>
+                  <h4>The pipeline</h4>
+                  <ul>
+                    <li><strong>Cleaned</strong> the data with pandas, and dropped <code>island</code> so the model learns from the animal's body, not where it was found.</li>
+                    <li><strong>Split</strong> 70/30 with a fixed seed so results repeat.</li>
+                    <li><strong>Preprocessed</strong> with a <code>ColumnTransformer</code>: mean-fill and scale the numbers, fill and one-hot encode <code>sex</code>.</li>
+                    <li><strong>Trained</strong> a 100-tree <code>RandomForestClassifier</code> inside one pipeline, so the same preprocessing runs at training and prediction time and test data never leaks into training.</li>
+                    <li><strong>Evaluated</strong> with a per-species classification report rather than one accuracy number, and plotted a correlation heatmap and pairplot.</li>
+                  </ul>
+                </section>
+                <p><a class="pill pill--ghost pill--sm" href="https://github.com/JPCass07/AI-Penguin-Identifer">Code on GitHub <span class="pill__arrow" aria-hidden="true">→</span></a></p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Databases -->
+          <li class="project reveal" data-title="Database systems, two projects" data-start="2024-09" data-end="2026-05">
+            <div class="stage">
+              <svg viewBox="0 0 240 150" aria-hidden="true">
+                <rect class="paper" x="6" y="12" width="80" height="30" rx="3"/>
+                <text class="t-mono" x="46" y="31" text-anchor="middle">Resource</text>
+                <path class="paper" d="M120 12 140 27 120 42 100 27Z" style="stroke:var(--accent)"/>
+                <rect class="paper" x="154" y="12" width="80" height="30" rx="3"/>
+                <text class="t-mono" x="194" y="31" text-anchor="middle">Usage</text>
+                <path class="pen" d="M86 27H100M140 27H154M146 19 154 27 146 35"/>
+                <path class="pen" d="M14 138H228" style="stroke:var(--line)"/>
+                <path class="pen" d="M14 64V138" style="stroke:var(--line)"/>
+                <path class="pen draw" pathLength="1" d="M18 70 46 76 74 80 102 92 130 98" style="stroke:var(--accent)"/>
+                <path class="pen" d="M130 98 196 138" style="stroke:var(--accent);stroke-dasharray:3 4"/>
+                <circle class="warn-fill" cx="196" cy="138" r="4"/>
+                <circle class="warn-fill ping" cx="196" cy="138" r="4"/>
+                <text class="t-mono" x="150" y="128" text-anchor="end">forecast</text>
+              </svg>
+            </div>
+            <div class="project__meta">
+              <p class="idx"><b>No. 05</b><span>A level → 2026</span><span>Coursework</span></p>
+              <h3>Database systems, two projects</h3>
+              <p class="project__desc">A Python and MySQL client-server app that forecasts resource shortages, then the theory behind it: E-R modelling and normalisation in a group database project at Reading.</p>
+              <div class="project__foot">
+                <ul class="stack"><li>Python</li><li>MySQL</li><li>SQL</li></ul>
+                <span class="tag tag--2"><i class="off"></i>A level + CS1DB</span>
+              </div>
+              <button class="more" type="button" aria-haspopup="dialog">Read the write-up <span aria-hidden="true">→</span><span class="sr-only">: Database systems, two projects</span></button>
+            </div>
+            <div class="project__detail">
+              <div class="detail">
+                <section>
+                  <h4>Resource manager · A level project</h4>
+                  <ul>
+                    <li>Designed a <strong>MySQL</strong> database for resources, stock levels and usage over time, served to several client machines from one server.</li>
+                    <li><strong>Forecast shortages</strong> with linear extrapolation: fit a trend to past usage, project it forward and estimate when each resource runs out.</li>
+                    <li>Charted stock and predicted shortages so a user can act at a glance, and documented the whole lifecycle: analysis, design, testing, evaluation.</li>
+                  </ul>
+                  <p>Its limit is the honest part: a straight line assumes usage stays steady.</p>
+                </section>
+                <section>
+                  <h4>Relational design · CS1DB group coursework</h4>
+                  <ul>
+                    <li>With my group, took a scenario to an <strong>E-R model</strong>, then to <strong>normalised tables</strong> with keys and constraints.</li>
+                    <li>Implemented it and wrote multi-table SQL against it, and co-wrote the technical report.</li>
+                  </ul>
+                  <p>The first project was database work done by hand; the second gave me the theory for why it works.</p>
+                </section>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 03 Now ============ -->
+    <section class="section" id="now" aria-labelledby="now-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow reveal"><b>No. 03</b>Now</p>
+          <h2 id="now-title" class="reveal"><span>What I'm on,</span><span class="dim">this term.</span></h2>
+          <p class="lede reveal"><span class="live"><span class="live__dot" aria-hidden="true"></span>Updated <time datetime="2026-10-27">27 Oct 2026</time></span></p>
+        </header>
+
+        <div class="now">
+          <dl class="now-list">
+            <div class="reveal"><dt>Building</dt><dd>Flytrap phase 2<small>Running my own certificate authority, TLS on the decoy, and mutual TLS between services. Then Lab 02: decrypting TLS in Wireshark.</small></dd></div>
+            <div class="reveal"><dt>Studying</dt><dd>Second year at Reading<small>Data Structures and Algorithms, Programming in Python, and Software Engineering and Professional Development. Operating Systems, Computer Networking and AI are next semester.</small></dd></div>
+            <div class="reveal"><dt>Working</dt><dd>Part-time at Currys<small>Computing sales, explaining technology to people who just want it to work.</small></dd></div>
+            <div class="reveal"><dt>Looking for</dt><dd>2027 internships in forward deployed engineering and security<small>Teams that put engineers in front of customers' hardest problems. Happy to travel.</small></dd></div>
+          </dl>
+
+          <article class="panel roadmap reveal" aria-label="Flytrap roadmap">
+            <header class="panel__head"><span>Flytrap · roadmap</span><time datetime="2026-10">Oct 2026</time></header>
+            <ul class="panel__rows">
+              <li><b>01</b><span>Isolated lab and first capture<small>Cowrie, HTTP decoy, packet capture, simulated attacker</small></span><span class="tag tag--2"><i class="ok"></i>Running</span></li>
+              <li><b>02</b><span>Certificates and TLS<small>Private CA, HTTPS decoy, mutual TLS</small></span><span class="tag tag--2"><i class="ink"></i>In progress</span></li>
+              <li><b>03</b><span>Collector, triage app, MCP<small>One data model for every sensor</small></span><span class="tag tag--2"><i class="off"></i>Planned</span></li>
+              <li><b>04</b><span>Hardening and CI scanning<small>Segmentation, secrets, Trivy, Semgrep, Gitleaks</small></span><span class="tag tag--2"><i class="off"></i>Planned</span></li>
+              <li><b>05</b><span>Internet-facing deployment<small>And a write-up of real attacks, aggregates only</small></span><span class="tag tag--2"><i class="off"></i>Planned</span></li>
+            </ul>
+            <div class="bar" aria-hidden="true"><i class="ok"></i><i class="now"></i><i></i><i></i><i></i></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 Toolkit ============ -->
+    <section class="section" id="toolkit" aria-labelledby="kit-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow reveal"><b>No. 04</b>Toolkit</p>
+          <h2 id="kit-title" class="reveal"><span>Tools,</span><span class="dim">with receipts.</span></h2>
+          <p class="lede reveal">No skill bars. Each group says where I actually used it.</p>
+        </header>
+
+        <ul class="kit">
+          <li class="reveal">
+            <p class="kit__k"><b>01</b> · Security and infrastructure</p>
+            <h3>Packets and containers</h3>
+            <ul class="stack"><li>Wireshark</li><li>tcpdump</li><li>Docker Compose</li><li>Container hardening</li><li>Cowrie</li><li>nmap</li><li>Linux</li></ul>
+            <p class="kit__ev">Used in <a href="#work">Flytrap</a></p>
+          </li>
+          <li class="reveal">
+            <p class="kit__k"><b>02</b> · Endpoint and compliance</p>
+            <h3>Enterprise platforms</h3>
+            <ul class="stack"><li>Tanium (TCO)</li><li>Tanium Comply</li><li>Vulnerability scanning</li><li>Case triage</li></ul>
+            <p class="kit__ev">Used at <a href="#tanium">Tanium</a></p>
+          </li>
+          <li class="reveal">
+            <p class="kit__k"><b>03</b> · Applied AI</p>
+            <h3>Models with tools</h3>
+            <ul class="stack"><li>Claude</li><li>Claude skills</li><li>MCP</li><li>scikit-learn</li><li>pandas</li></ul>
+            <p class="kit__ev">Used in the <a href="#intern-project">Tanium intern project</a> and the <a href="#work">penguin classifier</a></p>
+          </li>
+          <li class="reveal">
+            <p class="kit__k"><b>04</b> · Languages</p>
+            <h3>What I write in</h3>
+            <ul class="stack"><li>Python</li><li>Java</li><li>SQL</li><li>JavaScript</li><li>HTML and CSS</li><li>C#</li></ul>
+            <p class="kit__ev">Used across <a href="#work">every project</a>, and this site</p>
+          </li>
+          <li class="reveal">
+            <p class="kit__k"><b>05</b> · Data</p>
+            <h3>Modelling and storage</h3>
+            <ul class="stack"><li>MySQL</li><li>E-R modelling</li><li>Normalisation</li><li>JSON lines</li><li>Forecasting</li></ul>
+            <p class="kit__ev">Used in the <a href="#work">database projects</a></p>
+          </li>
+          <li class="reveal">
+            <p class="kit__k"><b>06</b> · Ways of working</p>
+            <h3>The other half</h3>
+            <ul class="stack"><li>Git and GitHub</li><li>Technical writing</li><li>Decision logs</li><li>Presenting</li><li>Customer calls</li></ul>
+            <p class="kit__ev">Used at <a href="#tanium">Tanium</a> and Currys</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 05 Contact ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact">
+        <p class="eyebrow reveal"><b>No. 05</b>Contact</p>
+        <h2 id="contact-title" class="reveal"><span>Building something</span><span class="dim">customers rely on?</span></h2>
+        <div class="contact__body reveal">
+          <p>I'm looking for 2027 internships in forward deployed engineering and security, and I'm always glad to talk about endpoints, honeypots or MCP. Email is quickest; my CV is a reply away.</p>
+          <div class="pills">
+            <a class="pill" href="mailto:JPCass07@outlook.com?subject=Hello%20Julio">Email me <span class="pill__arrow" aria-hidden="true">→</span></a>
+            <a class="pill pill--ghost" href="mailto:JPCass07@outlook.com?subject=CV%20request">Ask for my CV</a>
+          </div>
+        </div>
+        <div class="contact__links reveal">
+          <a class="databtn" href="mailto:JPCass07@outlook.com"><span>Email</span><span>JPCass07@outlook.com</span></a>
+          <a class="databtn" href="https://www.linkedin.com/in/julio-cassinda-220811308/"><span>LinkedIn</span><span>julio-cassinda</span></a>
+          <a class="databtn" href="https://github.com/JPCass07"><span>GitHub</span><span>JPCass07</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p class="bigname" aria-hidden="true">Julio<b>C.</b></p>
+      <div class="foot-row">
+        <p>© 2026 Julio Paulo Cassinda</p>
+        <p>Version 2 · hand-built in HTML, CSS and a little JavaScript</p>
+        <p><a href="#top">Back to top ↑</a></p>
+      </div>
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a Computer Science student at the University of Reading with a strong interest in programming, software design, 
-      and cybersecurity. I enjoy building projects that are clean, functional, and impactful. 
-      My goal is to grow as a developer and contribute to innovative tech solutions.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-<section id="projects" class="projects">
-  <h2>Key Projects</h2>
-        
-  <div class="project-grid">
-
-    <div class="project-card" onclick="openModal('project1')">
-      <h3>Portfolio Website</h3>
-      <p>Personal responsive portfolio to showcase skills and projects.</p>
-    </div>
-
-    <div class="project-card" onclick="openModal('project2')">
-      <h3>Resource management software</h3>
-      <p>A resource manager with basic linear extrapolation to predict resource shortages</p>
-    </div>
-
-    <div class="project-card" onclick="openModal('project3')">
-      <h3>AI species identifier</h3>
-      <p>An AI built with Python and binary trees to identify penguin species from given data.</p>
-    </div>
-  </div>
-</section>
-
-
-<!--THIS GODAMNED BUTTON-->
-<div class="hero-content" style="text-align: center; position: relative; z-index: 1;">
-  <a href="projects.html" class="btn">The details</a>
-</div>
-
-
-
-<!-- Modal for Project 1 -->
-<div id="project1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project1')">&times;</span>
-    <h2>Portfolio Website</h2>
-    <p>
-      This is a responsive personal portfolio website built with Flask, HTML, CSS,  and JavaScript.
-      It features a sleek dark theme with animations and project showcase sections. This is the web app you are currently on!
-      i will continue to develop and add additonal projects to this web app as I progess, enentually adding work experiences too!
-    </p>
-  </div>
-</div>
-
-<!-- Modal for Project 2 -->
-<div id="project2" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project2')">&times;</span>
-    <h2>Resource Management Software</h2>
-    <p>
-      A software tool designed to track resources and predict shortages using simple linear
-      extrapolation. Built with Python and integrated data visualization libraries. This was my A level computer science project.
-      It gave me insights into the fundementals of database management, using MySQL to manipultate data on a server and distribute it to client machines
-      as well as visualisation and graphical design basics.
-    </p>
-  </div>
-</div>
-
-<!-- Modal for Project 3 -->
-<div id="project3" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project3')">&times;</span>
-    <h2>AI Species Identifier</h2>
-    <p>
-      A machine learning project that identifies penguin species from biological data
-      (bill length, depth, color, height, weight, etc.). Implemented in Python using binary
-      trees and scientific libraries. This was coded during a hackathon I attended at Tesside University alongside 2 other students.
-      This gave me insights into AI development, decicion trees and data cleaning.
-    </p>
-  </div>
-</div>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <ul class="skill-list">
-      <li>Python</li>
-      <li>SQL</li>
-      <li>JavaScript</li>
-      <li>Git and github</li>
-      <li>C#</li>
-      <li>HTML & CSS</li>
-      <li>Cybersecurity Fundamentals</li>
-      <li>Database Management</li>
-      <li>full stack development</li>
-    </ul>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:JPCass07@outlook.com">JPCass07@outlook.com</a></p>
-    <p>LinkedIn: <a href="#">https://www.linkedin.com/in/julio-cassinda-828512321/</a></p>
-    <p>GitHub: <a href="#">https://github.com/JPCass07</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Julio Paulo Cassinda | </p>
   </footer>
 
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <div class="sheet__head">
+      <div>
+        <p class="idx" id="sheet-idx"></p>
+        <h2 id="sheet-title"></h2>
+      </div>
+      <button type="button" class="icon-btn" data-close aria-label="Close write-up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="sheet__body" id="sheet-body"></div>
+  </dialog>
 
-
+  <script src="script.js" defer></script>
 </body>
 </html>

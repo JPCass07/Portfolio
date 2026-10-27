@@ -2,6 +2,7 @@
    Layout and parts follow Sample (asset-library). The palette is a terminal: pure neutral
    black, greys and white (OKLCH chroma 0), with matrix green as the only hue, for marks,
    links and buttons. Amber and red are kept for status, like amber-phosphor warnings.
+   The light theme is the exception: warm peach-cream neutrals, by choice.
    Every colour below reads from :root; check it with tools/palette.py. */
 
 /* ==========================================================================
@@ -37,36 +38,40 @@
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --ground: #F1F1F1;
-    --surface: #E7E7E7;
-    --surface-2: #DCDCDC;
-    --ink: #111111;
-    --ink-2: #5A5A5A;
-    --line: rgba(0, 0, 0, .14);
+    /* Deliberate warm cast: peach-cream eggshell, OKLCH hue 72, chroma up to .03.
+       Check with tools/palette.py check --max-neutral-chroma .03. */
+    --ground: #FAEEE1;
+    --surface: #F1E4D5;
+    --surface-2: #E7D8C7;
+    --ink: #1B1612;
+    --ink-2: #625950;
+    --line: rgba(41, 32, 24, .16);
     --accent: #006B23;
     --fill: #006B23;
     --on-fill: #FFFFFF;
     --warn: #8A6100;
     --fail: #C0362C;
-    --scrim: rgba(0, 0, 0, .5);
+    --scrim: rgba(26, 21, 17, .5);
     --glow: none;
     color-scheme: light;
   }
 }
 
 :root[data-theme="light"] {
-  --ground: #F1F1F1;
-  --surface: #E7E7E7;
-  --surface-2: #DCDCDC;
-  --ink: #111111;
-  --ink-2: #5A5A5A;
-  --line: rgba(0, 0, 0, .14);
+  /* Deliberate warm cast: peach-cream eggshell, OKLCH hue 72, chroma up to .03.
+     Check with tools/palette.py check --max-neutral-chroma .03. */
+  --ground: #FAEEE1;
+  --surface: #F1E4D5;
+  --surface-2: #E7D8C7;
+  --ink: #1B1612;
+  --ink-2: #625950;
+  --line: rgba(41, 32, 24, .16);
   --accent: #006B23;
   --fill: #006B23;
   --on-fill: #FFFFFF;
   --warn: #8A6100;
   --fail: #C0362C;
-  --scrim: rgba(0, 0, 0, .5);
+  --scrim: rgba(26, 21, 17, .5);
   --glow: none;
   color-scheme: light;
 }
